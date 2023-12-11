@@ -30,6 +30,13 @@
   .hero__section{
     @apply bg-[url('./assets/images/hero-bg.png')] bg-no-repeat bg-center bg-cover
   }
+
+  .form__lable{
+    @apply text-textColor leading-7 font-semibold text-[16px] mb-2
+  }
+  .form__input{
+    @apply w-full py-3 px-4  border border-solid border-[#0066ff66] focus:outline-none text-[16px] leading-7 text-headingColor placeholder:text-textColor focus:border-primaryColor cursor-pointer rounded-md
+    }
 }
 
 @media only screen and (max-width: 1024px) {
