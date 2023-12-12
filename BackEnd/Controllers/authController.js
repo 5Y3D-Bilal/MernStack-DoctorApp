@@ -1,7 +1,9 @@
+//^ ========== ALL IMPORTS
 import User from '../Models/UserSchema.js'
 import Doctor from '../Models/DoctorSchema.js'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
+//^ ========== ==========
 
 
 // *Genrate Token Function
@@ -117,3 +119,4 @@ export const login = async (req, res) => {
         res.status(500).json({ staus: false, message: "Faild to login" })
     }
 }
+// *====================
