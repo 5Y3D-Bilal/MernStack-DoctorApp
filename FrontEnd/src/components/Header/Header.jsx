@@ -52,9 +52,9 @@ function Header() {
       <div className="container">
         <div className="flex items-center justify-between">
           {/* ----------- Logo ----------- */}
-          <div>
+          <Link to="/home">
             <img src={logo} alt="logo" />
-          </div>
+          </Link>
 
           {/* ----------- Logo ----------- */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
@@ -63,9 +63,9 @@ function Header() {
                 <li key={index}>
                   <NavLink
                     to={link.path}
-                    className={(navClass) =>
-                      navClass.isActive
-                        ? "text-primaryColor text-[16px] leading-7 font-[600]"
+                    className={(ifTheLinkIsActive) =>
+                      ifTheLinkIsActive.isActive
+                        ? "text-primaryColor text-[16px] leading-7 font-[800]"
                         : "text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor"
                     }
                   >

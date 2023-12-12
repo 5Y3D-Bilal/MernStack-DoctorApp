@@ -44,7 +44,7 @@ const SignUp = () => {
           {/* {-----------signup form------------} */}
           <div className="bg-white rounded-r-lg lg:pl-16 p-10">
             <h3 className="text-[22px] font-bold mb-10 leading-9 text-headingColor">
-              Create an<span className="text-primaryColor">account</span>
+              Create an <span className="text-primaryColor">account</span>
             </h3>
             <form onSubmit={submitHeandler}>
               <div className="mb-5">
