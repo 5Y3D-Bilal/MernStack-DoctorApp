@@ -1,8 +1,26 @@
-# React + Vite
+Doctor Web App (MERN)
+This is a web application for managing doctors' data built using the MERN (MongoDB, Express.js, React, Node.js) stack. It leverages Axios for efficient data fetching and rendering on the frontend.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+Fetch and display doctor data
+User-friendly interface
+Responsive design for a seamless experience
+Getting Started
+Prerequisites
+Node.js and npm installed
+MongoDB Atlas account for database storage
+Installation
+Clone the repository: git clone <repository-url>
+Navigate to the server directory: cd server
+Install server dependencies: npm install
+Set up your MongoDB connection in .env file
+Start the server: npm start
+Repeat the process for the client directory.
 
-Currently, two official plugins are available:
+Contributors
+Ali Hussain
+Fawad Ahmad
+Usage
+Once the server and client are running, visit the application in your browser. You'll be able to view and manage doctor data efficiently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Feel free to contribute or report issues. Happy coding!
