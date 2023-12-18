@@ -17,13 +17,20 @@ import ServiceList from "../components/Service/ServiceList";
 import DoctorList from "../components/Doctors/DoctorList";
 import FaqList from "../components/Faq/FaqList";
 import Testimonials from "../components/Testimonials/Testimonials";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Home() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       {/* ------------ Hero Section start------------- */}
 
-      <section className="hero__section pt-[60px] 2xl:h-[800px]">
+      <section className="hero__section pt-[60px] 2xl:h-[800px] overflow-x-hidden md:overflow-y-hidden">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
             {/* ------------ Hero Content Start------------- */}
@@ -40,12 +47,18 @@ function Home() {
                   Quas inventore reiciendis sed odit. Quas, reprehenderit.
                 </p>
 
-                <button className="btn">Request an Appointment</button>
+                <Link
+                  to="/doctors"
+                  data-aos="zoom-out-right"
+                  data-aos-duration="3000"
+                >
+                  <button className="btn">Request an Appointment</button>
+                </Link>
               </div>
 
               {/* ------------ Hero Counter------------- */}
               <div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
-                <div>
+                <div data-aos="zoom-out-right" data-aos-duration="3000">
                   <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
                     30+
                   </h2>
@@ -53,7 +66,7 @@ function Home() {
                   <div className="text__para">Year of Exprience</div>
                 </div>
 
-                <div>
+                <div data-aos="zoom-out-right" data-aos-duration="2500">
                   <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
                     15+
                   </h2>
@@ -61,7 +74,7 @@ function Home() {
                   <div className="text__para">Clinic Location</div>
                 </div>
 
-                <div>
+                <div data-aos="zoom-out-right" data-aos-duration="2000">
                   <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
                     100%
                   </h2>
@@ -74,7 +87,12 @@ function Home() {
 
             <div className="flex gap-[30px] justify-end">
               <div>
-                <img src={heroImg01} alt="hero-image-01" />
+                <img
+                  src={heroImg01}
+                  alt="hero-image-01"
+                  data-aos="zoom-out-right"
+                  data-aos-duration="2000"
+                />
               </div>
 
               <div className="mt-[30px]">
@@ -82,8 +100,16 @@ function Home() {
                   src={heroImg02}
                   alt="hero-image-02"
                   className="w-full mb-[30px]"
+                  data-aos="zoom-out-left"
+                  data-aos-duration="2000"
                 />
-                <img src={heroImg03} alt="hero-image-03" className="w-full" />
+                <img
+                  src={heroImg03}
+                  alt="hero-image-03"
+                  className="w-full"
+                  data-aos="zoom-out-up"
+                  data-aos-duration="2000"
+                />
               </div>
             </div>
           </div>
@@ -91,21 +117,33 @@ function Home() {
       </section>
       {/* ------------ Hero Section end------------- */}
 
-      <section>
+      <section className="overflow-x-hidden">
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
-            <h2 className="heading text-center">
+            <h2
+              className="heading text-center"
+              data-aos="fade"
+              data-aos-duration="2000"
+            >
               Providing the best madical services
             </h2>
 
-            <p className="text__para text-center">
+            <p
+              className="text__para text-center"
+              data-aos="fade"
+              data-aos-duration="2000"
+            >
               World-class care for everyone. Our health System offers unmatched,
               expert health care.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]">
-            <div className="py-[30px] px-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px] overflow-x-hidden">
+            <div
+              className="py-[30px] px-5"
+              data-aos="fade-right"
+              data-aos-duration="2000"
+            >
               <div className="flex items-center justify-center">
                 <img src={icon01} alt="icon-01" />
               </div>
@@ -127,7 +165,11 @@ function Home() {
               </div>
             </div>
 
-            <div className="py-[30px] px-5">
+            <div
+              className="py-[30px] px-5"
+              data-aos-duration="2000"
+              data-aos="fade"
+            >
               <div className="flex items-center justify-center">
                 <img src={icon02} alt="icon-01" />
               </div>
@@ -149,7 +191,11 @@ function Home() {
               </div>
             </div>
 
-            <div className="py-[30px] px-5">
+            <div
+              className="py-[30px] px-5"
+              data-aos-duration="2000"
+              data-aos="fade-left"
+            >
               <div className="flex items-center justify-center">
                 <img src={icon03} alt="icon-01" />
               </div>
@@ -195,7 +241,7 @@ function Home() {
       {/* ------------ Features Section Start     1:10------------- */}
       <section>
         <div className="container">
-          <div className="flex items-center justify-between flex-col lg:flex-row">
+          <div className="flex items-center justify-between flex-col lg:flex-row overflow-x-hidden overflow-y-hidden">
             {/* ----------feature content----------- */}
             <div className="xl:w-[670px]">
               <h2 className="heading">
@@ -220,7 +266,9 @@ function Home() {
 
             {/* -----------feature image------------------ */}
             <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
-              <img src={featureImg} alt="feature image" className="w-3/4" />
+              <div data-aos="zoom-out-left" data-aos-duration="3000">
+                <img src={featureImg} alt="feature image" className="w-3/4" />
+              </div>
               <div className="w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-[6px] lg:gap-3">
@@ -274,7 +322,12 @@ function Home() {
         <div className="container">
           <div className="flex justify-between gap-[50px] lg:gap-0">
             <div className="w-1/2 hidden md:block">
-              <img src={faqImage} alt="FAQ Image" />
+              <img
+                src={faqImage}
+                alt="FAQ Image"
+                data-aos="fade-right"
+                data-aos-duration="3000"
+              />
             </div>
             <div className="w-full md:w-1/2">
               <h2 className="heading">

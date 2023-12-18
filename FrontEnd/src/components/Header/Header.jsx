@@ -1,8 +1,9 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
 import logo from "../../assets/images/logo.png";
 import userImg from "../../assets/images/avatar-icon.png";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
+import { authContext } from "../../context/AuthContext.jsx";
 
 const navLinks = [
   {
@@ -26,6 +27,9 @@ const navLinks = [
 function Header() {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
+  const { user, role, token } = useContext(authContext);
+  console.log(user , role, token)
+  const navigate = useNavigate();
 
   const handleStickyHeader = () => {
     window.addEventListener("scroll", () => {
@@ -44,6 +48,12 @@ function Header() {
     handleStickyHeader();
     return () => window.removeEventListener("scroll", handleStickyHeader);
   });
+
+  const { dispatch } = useContext(authContext);
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+    navigate('/login')
+  };
 
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
@@ -78,23 +88,40 @@ function Header() {
 
           {/* ----------- nav right ----------- */}
           <div className="flex items-center gap-4">
-            <div className="hidden">
-              <Link to="/">
-                <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
-                  <img
-                    src={userImg}
-                    className="w-full rounded-full"
-                    alt="user avatar"
-                  />
-                </figure>
+            {token && user ? (
+              <div className="flex gap-2">
+                <Link
+                  to={
+                    role === "doctor"
+                      ? "/doctors/profile/me"
+                      : "/users/profile/me"
+                  }
+                  // className="flex"
+                  className="flex items-center gap-2 "
+                >
+                  <figure className="w-[45px] h-[45px] rounded-full cursor-pointer ">
+                    <img
+                      src={user?.photo}
+                      className="w-full rounded-full"
+                      alt="user avatar"
+                    />
+                  </figure>
+                  <h2 className="text-xl">{user?.name}</h2>
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="bg-primaryColor py-2 px-6 text-white font[600] h-[44px] flex items-center justify-center rounded-[50px]"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link to="/login">
+                <button className="bg-primaryColor py-2 px-6 text-white font[600] h-[44px] flex items-center justify-center rounded-[50px]">
+                  Login
+                </button>
               </Link>
-            </div>
-
-            <Link to="/login">
-              <button className="bg-primaryColor py-2 px-6 text-white font[600] h-[44px] flex items-center justify-center rounded-[50px]">
-                Login
-              </button>
-            </Link>
+            )}
 
             <span className="md:hidden" onClick={toggleMenu}>
               <BiMenu className="w-6 h-6 cursor-pointer" />

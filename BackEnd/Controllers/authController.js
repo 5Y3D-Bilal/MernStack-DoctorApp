@@ -17,7 +17,7 @@ const genrateToken = (user) => {
             expiresIn: '15d',
         })
 }
-// *====================
+// ^=============================
 export const register = async (req, res) => {
     const { email, password, name, role, photo, gender, } = req.body
     try {
@@ -119,4 +119,5 @@ export const login = async (req, res) => {
         res.status(500).json({ staus: false, message: "Faild to login" })
     }
 }
-// *====================
+// ^=============================
+

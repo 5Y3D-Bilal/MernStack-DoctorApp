@@ -1,9 +1,12 @@
 // ^=========All Imports
 import Dcotor from '../Models/DoctorSchema.js'
+import Booking from '../Models/BookingSchema.js'
+
 // ^====================
 
 
-// *====================
+// ^=============================
+
 export const updateDoctor = async (req, res) => {
     const id = req.params.id
     try {
@@ -47,7 +50,7 @@ export const deleteDoctor = async (req, res) => {
 export const getSingleDoctor = async (req, res) => {
     const id = req.params.id
     try {
-        const doctor = await Dcotor.findById(id).select('-password')
+        const doctor = await Dcotor.findById(id).populate("reviews").select('-password')
         res.status(200).json({
             success: true,
             message: 'Got Single Dcotor with id',
@@ -68,7 +71,7 @@ export const getAllDoctors = async (req, res) => {
 
         if (query) {
             doctors = await Dcotor.find({
-                isApproved: "Approved",
+                isApproved: "approved",
                 // !----------------------------Here I means case intencive searching means BIlaL = bilal
                 $or: [
                     { name: { $regex: query, $options: "i" } },
@@ -78,12 +81,11 @@ export const getAllDoctors = async (req, res) => {
         } else {
             doctors = await Dcotor.find({ isApproved: 'approved' }).select('-password')
         }
-        const doctor = await Dcotor.find({}).select('-password')
         res.status(200).json({
             success: true,
-            Results: doctor.length,
+            Results: doctors.length,
             message: 'Get All Doctors ',
-            data: doctor
+            data: doctors
         })
     } catch (err) {
         res.status(404).json({
@@ -92,4 +94,34 @@ export const getAllDoctors = async (req, res) => {
         })
     }
 }
-// *====================
+
+export const getDoctorProfileData = async (req, res) => {
+    const doctorId = req.doctorId
+
+    try {
+        const doctor = await Dcotor.findById(doctorId)
+
+        if (!doctor) {
+            return res.status(404).json({
+                succes: false,
+                message: 'No user found'
+            })
+        }
+
+        const { password, ...reset } = doctor._doc
+        const appointments = await Booking.find({ doctor: doctorId })
+
+        res.status(200).json({
+            succes: true,
+            message: "Got user Profile",
+            data: { ...reset, appointments }
+        })
+    } catch (err) {
+        res.statsu(500).jsom({
+            succes: false,
+            message: "Something went Worng , cannot get Profile"
+        })
+    }
+}
+// ^=============================
+

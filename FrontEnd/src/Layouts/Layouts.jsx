@@ -5,8 +5,8 @@ import Router from "../routes/Router";
 function Layouts() {
   return (
     <>
-      <Header />
-      <main>
+      <Header className="App" />
+      <main className="main">
         <Router />
       </main>
       <Footer />

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -7,45 +7,68 @@
 }
 
 body {
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
 }
 
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   width: 12px !important;
   height: 12px !important;
   border: solid #2a2a2b;
   opacity: 100% !important;
-  background: #fff !important; 
+  background: #fff !important;
 }
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
   background: #0067ff !important;
   border: none;
 }
-.swiper{
+.swiper {
   padding-bottom: 70px !important;
 }
 
-.swiper-slide.swiper-slide-next{
+.swiper-slide.swiper-slide-next {
   background: #0067ff;
   border-radius: 12px !important;
   box-shadow: 0 20px 70px rgba(0, 103, 255, 0.3) !important;
 }
-.swiper-slide.swiper-slide-next h4,.swiper-slide.swiper-slide-next p{
+.swiper-slide.swiper-slide-next h4,
+.swiper-slide.swiper-slide-next p {
   color: #fff !important;
 }
-.swiper-pagination{
+.swiper-pagination {
   top: 90% !important;
 }
 
+body::-webkit-scrollbar-track {
+  background-color: #d4d4d4;
+}
 
+body::-webkit-scrollbar {
+  background-color: #0067ff;
+  width: 17px;
+}
 
+body::-webkit-scrollbar-thumb {
+  background-color: #0067ff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
 
+button:active{
+  transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+  -moz-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  -o-transform: translateY(1px);
+}
 
-.sticky__header{
+.sticky__header {
   width: 100px;
   height: 80px;
   line-height: 80px;
-  position: static;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 99999;
@@ -53,8 +76,8 @@ body {
   box-shadow: 3px 3px -8px 3px #ddd;
 }
 
-@media only screen and (max-width: 768px) { 
-  .navigation{
+@media only screen and (max-width: 768px) {
+  .navigation {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -64,7 +87,7 @@ body {
     background: #00000084;
     display: none;
   }
-  .menu{
+  .menu {
     width: 15rem;
     height: 100%;
     position: absolute;
@@ -78,7 +101,7 @@ body {
     line-height: 30px;
   }
 
-  .show__menu{
+  .show__menu {
     display: block;
   }
 }

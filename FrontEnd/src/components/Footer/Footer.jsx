@@ -10,7 +10,7 @@ import {
 
 const socialLinks = [
   {
-    path: "https://www.youtube.com/@ahelectronics9345",
+    path: "",
     icon: <RiYoutubeFill className="group-hover:text-white w-4 h-5" />,
   },
   {

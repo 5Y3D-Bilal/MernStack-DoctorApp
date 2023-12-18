@@ -13,7 +13,9 @@ const Testimonials = () => {
         modules={[Pagination]}
         spaceBetween={30}
         slidesPerView={1}
+        scrollbar={{draggable: true}}
         pagination={{ clickable: true }}
+        className="cursor-pointer"
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -35,10 +37,9 @@ const Testimonials = () => {
               <img src={patientAvatar} alt="patient Avatar Image" />
               <div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                  Muhibur Rahman
+                  Ali hussain
                 </h4>
                 <div className="flex items-center gap-[2px]">
-                  <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
@@ -47,8 +48,7 @@ const Testimonials = () => {
               </div>
             </div>
             <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
-              “I have taken services from them. The treat so well and they are
-              providing the best madical services.”
+              “Exceptional care, compassionate approach, highly recommended!”
             </p>
           </div>
         </SwiperSlide>
@@ -59,11 +59,9 @@ const Testimonials = () => {
               <img src={patientAvatar} alt="patient Avatar Image" />
               <div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                  Muhibur Rahman
+                  Ali Jawad
                 </h4>
                 <div className="flex items-center gap-1">
-                  <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
-                  <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
@@ -83,10 +81,9 @@ const Testimonials = () => {
               <img src={patientAvatar} alt="patient Avatar Image" />
               <div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                  Muhibur Rahman
+                  Bilal Haider
                 </h4>
                 <div className="flex items-center gap-1">
-                  <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
@@ -95,8 +92,7 @@ const Testimonials = () => {
               </div>
             </div>
             <p className="text-[18px] leading-7 mt-4 text-textColor font-[400]">
-              “I have taken services from them. The treat so well and they are
-              providing the best madical services.”
+              “Exceptional care and attention to detail. The doctor listened attentively and provided clear explanations, making the entire experience comfortable and reassuring.”
             </p>
           </div>
         </SwiperSlide>
@@ -107,20 +103,16 @@ const Testimonials = () => {
               <img src={patientAvatar} alt="patient Avatar Image" />
               <div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                  Muhibur Rahman
+                  Fawad Butt
                 </h4>
                 <div className="flex items-center gap-1">
-                  <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
-                  <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
-                  <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                   <HiStar className="text-yellowColor w-[18px] h-5"></HiStar>
                 </div>
               </div>
             </div>
             <p className="text-[18px] leading-7 mt-4 text-textColor font-[400]">
-              “I have taken services from them. The treat so well and they are
-              providing the best madical services.”
+              “Exceptional care and expertise! The doctor listened attentively to my concerns, explained the diagnosis thoroughly, and provided effective treatment. Grateful for a positive experience in their hands.”
             </p>
           </div>
         </SwiperSlide>
